@@ -13,3 +13,20 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Exclude all .idea files
+.idea/
+
+# But keep useful configuration files (optional)
+!.idea/codeStyles/
+!.idea/inspectionProfiles/
+!.idea/vcs.xml
+
+# Ignore specific temporary and user-specific files
+.idea/workspace.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/shelf/
+.idea/deploymentTargetSelector.xml
+.idea/material_theme_project_new.xml
+
