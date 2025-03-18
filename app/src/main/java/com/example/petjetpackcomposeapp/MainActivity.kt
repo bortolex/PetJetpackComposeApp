@@ -33,7 +33,8 @@ class MainActivity : ComponentActivity() {
     fun HelloWorld() {
         Row(verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.background(Color.Red).fillMaxSize(),
-            horizontalArrangement = Arrangement.End
+            horizontalArrangement = Arrangement.SpaceAround,
+            
         ) {
             Text(
                 "Hello World",
