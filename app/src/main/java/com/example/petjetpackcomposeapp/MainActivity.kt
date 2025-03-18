@@ -17,10 +17,16 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 //        enableEdgeToEdge()
         setContent {
-            Text("Hello World",
-                fontSize =  35.sp
-                )
+            HelloWorld()
         }
+    }
+    @Preview
+    @Composable
+    fun HelloWorld() {
+        Text(
+            "Hello World",
+            fontSize = 35.sp
+        )
     }
 }
 
