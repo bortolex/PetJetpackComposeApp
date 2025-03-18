@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
             HelloWorld()
         }
     }
-    @Preview (showBackground = true)
+    @Preview (showSystemUi = true)
     @Composable
     fun HelloWorld() {
         Row {
