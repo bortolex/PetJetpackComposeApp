@@ -12,6 +12,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.petjetpackcomposeapp.ui.OutlinedTextFieldScreen
 import com.example.petjetpackcomposeapp.ui.SimpleButtonInBox
+import com.example.petjetpackcomposeapp.ui.StateTextFieldComponent
 
 
 class MainActivity : ComponentActivity() {
@@ -20,7 +21,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 //        enableEdgeToEdge()
         setContent {
-            OutlinedTextFieldScreen()
+            StateTextFieldComponent()
+//            OutlinedTextFieldScreen()
 //            SimpleButtonInBox("test TEXT")
 //            HelloWorld()
         }
