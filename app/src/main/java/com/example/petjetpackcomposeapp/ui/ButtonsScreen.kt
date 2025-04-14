@@ -1,4 +1,4 @@
-package com.example.petjetpackcomposeapp
+package com.example.petjetpackcomposeapp.ui
 
 import android.content.Context
 import android.widget.Toast
@@ -10,7 +10,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Preview
 
 //@Preview(showSystemUi = true)
 @Composable
