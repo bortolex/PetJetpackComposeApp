@@ -20,9 +20,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 //        enableEdgeToEdge()
         setContent {
-            HelloWorld()
+            SimpleButtonInBox("test TEXT")
+//            HelloWorld()
         }
     }
+
+
     @Preview (showBackground = true)
     @Composable
     fun HelloWorld() {
