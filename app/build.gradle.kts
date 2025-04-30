@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.runtime.ktx)
+    implementation(libs.ads.mobile.sdk)
     testImplementation(libs.junit)
     implementation (libs.ui)
     implementation (libs.androidx.navigation.compose)
@@ -63,5 +64,7 @@ dependencies {
 //    kapt(libs.hilt.android.compiler)
     implementation(libs.retrofit)
     implementation(libs.converter.gson) // or Moshi/Scalars based on your preference
+    implementation(libs.coil.compose)
+    implementation(libs.androidx.hilt.navigation.compose)
 
 }
