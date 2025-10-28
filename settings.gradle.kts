@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "PetJetpackComposeApp"
 include(":app")
- 
+include(":navigation")
