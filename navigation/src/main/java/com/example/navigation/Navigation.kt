@@ -8,7 +8,7 @@ import androidx.compose.runtime.remember
 data class Navigation(val router: Router, val navigationState: NavigationState)
 
 @Composable
-fun rememberNavigation(initialRoute: Route){
+fun rememberNavigation(initialRoute: Route):Navigation{
     return remember {
         TODO()
     }

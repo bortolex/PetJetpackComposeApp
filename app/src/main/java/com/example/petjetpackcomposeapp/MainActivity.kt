@@ -3,43 +3,30 @@ package com.example.petjetpackcomposeapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.background
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.sp
-import com.example.petjetpackcomposeapp.ui.CheckBoxComponent
-import com.example.petjetpackcomposeapp.ui.OutlinedTextFieldScreen
-import com.example.petjetpackcomposeapp.ui.SimpleButtonInBox
-import com.example.petjetpackcomposeapp.ui.StateTextFieldComponent
+import com.example.petjetpackcomposeapp.base.AppRoute
+import com.example.petjetpackcomposeapp.ui.AppScreen
+import com.example.petjetpackcomposeapp.ui.theme.AppTheme
 
+val RootTabs: List<AppRoute.Tab> =
+    listOf(AppRoute.Tab.Items, AppRoute.Tab.Settings, AppRoute.Tab.Profile)
 
 class MainActivity : ComponentActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
-        setContent {
-            CheckBoxComponent()
-//            StateTextFieldComponent()
-//            OutlinedTextFieldScreen()
-//            SimpleButtonInBox("test TEXT")
-//            HelloWorld()
+    /**
+     * The list of all root tabs.
+     */
+
+
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContent {
+                AppTheme {
+                    AppScreen()
+                }
+            }
         }
-    }
-
-
-    @Preview (showBackground = true)
-    @Composable
-    fun HelloWorld() {
-        Text(
-            "Hello World",
-            fontSize = 35.sp,
-            color = Color.Green,
-            modifier = Modifier.background(Color.Cyan)
-        )
-    }
 }
+
+
 

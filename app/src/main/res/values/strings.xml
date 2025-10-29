@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">PetJetpackComposeApp</string>
+    <string name="items">items\n</string>
+    <string name="settings">settings</string>
+    <string name="profile">profile</string>
+    <string name="add_item">add item\n</string>
+    <string name="main_menu">main menu\n</string>
+    <string name="more_actions">more actions</string>
+    <string name="about">about</string>
+    <string name="scaffold_app">scaffold app</string>
+    <string name="clear">clear</string>
+    <string name="add_new_item">add new item</string>
+
+
 </resources>
