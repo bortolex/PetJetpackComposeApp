@@ -168,19 +168,19 @@ fun AppScreen(itemsRepository: ItemsRepository = ItemsRepository.get()) {
         ) { currentRoute ->
             // screen content:
 
-//            when (currentRoute) {
-//                AppRoute.Tab.Items -> ItemsScreen(items)
-//                AppRoute.Tab.Settings -> SettingsScreen()
-//                AppRoute.Tab.Profile -> ProfileScreen()
-//                AppRoute.AddItem -> {
-//                    AddItemScreen(
-//                        onSubmitNewItem = {
-//                            itemsRepository.addItem(it)
-//                            router.pop()
-//                        }
-//                    )
-//                }
-//            }
+            when (currentRoute) {
+                AppRoute.Tab.Items -> ItemsScreen(items)
+                AppRoute.Tab.Settings -> SettingsScreen()
+                AppRoute.Tab.Profile -> ProfileScreen()
+                AppRoute.AddItem -> {
+                    AddItemScreen(
+                        onSubmitNewItem = {
+                            itemsRepository.addItem(it)
+                            router.pop()
+                        }
+                    )
+                }
+            }
         }
     }
 }
