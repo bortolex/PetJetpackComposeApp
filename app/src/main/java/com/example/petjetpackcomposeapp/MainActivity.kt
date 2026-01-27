@@ -26,7 +26,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 //        enableEdgeToEdge()
         setContent {
-            HelloWorld()
+            AppNavGraph()
+//            HelloWorld()
         }
     }
     @Preview (showSystemUi = true)

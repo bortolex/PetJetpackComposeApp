@@ -29,7 +29,7 @@ class OldMainViewModel(
             }
             .onFailure { e ->
                 _uiState.value = ScreenState.Error(
-                    message = e ?: "Unknown error",
+                    message = UiText.Plain("plain"),
                     canRetry = true
                 )
             }

@@ -7,7 +7,7 @@ import androidx.navigation.compose.composable
 import com.example.petjetpackcomposeapp.screens.HomeScreen
 
 @Composable
-fun NavHost(navController: NavHostController) {
+fun CustomNavHost(navController: NavHostController) {
     NavHost(navController, startDestination = "home") {
         composable("home") { HomeScreen(navController) }
 //        composable("profile") { ProfileScreen(navController) }
