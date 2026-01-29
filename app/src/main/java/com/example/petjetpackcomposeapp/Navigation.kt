@@ -12,9 +12,9 @@ import com.example.petjetpackcomposeapp.screens.NewHomeScreen
 fun AppNavGraph() {
         val navController = rememberNavController() // it's object which manages navigation between composable screens
 
-        NavHost(navController = navController, startDestination = "home"){
+        NavHost(navController = navController, startDestination = "home") {
                 composable("home") {
-                        NewHomeScreen{
+                        NewHomeScreen {
                                 navController.navigate("details")
                         }
                 }
