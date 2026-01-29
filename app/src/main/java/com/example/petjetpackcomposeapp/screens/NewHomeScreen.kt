@@ -20,13 +20,18 @@ fun NewHomeScreen(clickNavigation: () -> Unit) {
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
-        TopAppBar(title = { Text(text = "New Home Screen") }, navigationIcon = {
-            Icon(
-                imageVector = Icons.Default.Face, contentDescription = null
-            )
-        })
         Button(modifier = Modifier.padding(top = 25.dp), onClick = {
             clickNavigation.invoke()
         }) { }
     }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun BaseTopAppBar() {
+    TopAppBar(title = { Text(text = "New Home Screen") }, navigationIcon = {
+        Icon(
+            imageVector = Icons.Default.Face, contentDescription = null
+        )
+    })
 }
