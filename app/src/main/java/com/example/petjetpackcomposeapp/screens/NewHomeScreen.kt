@@ -22,7 +22,6 @@ import androidx.compose.ui.unit.dp
 import com.example.petjetpackcomposeapp.R
 import com.example.petjetpackcomposeapp.ui.theme.TopAppBarSurfaceColor
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NewHomeScreen(clickNavigation: () -> Unit) {
     Column(
@@ -39,7 +38,10 @@ fun NewHomeScreen(clickNavigation: () -> Unit) {
 fun BaseTopAppBar() {
     TopAppBar(modifier = Modifier.background(
         color = TopAppBarSurfaceColor, shape = RoundedCornerShape(36.dp)
-    ), title = { Text(text = stringResource(R.string.title_top_app_bar)) }, navigationIcon = {
+    ), title = { //title in TopAppBar is composable function. So it's not required to have a text.
+        // It could be even image or something else
+        Text(text = stringResource(R.string.title_top_app_bar)) },
+        navigationIcon = {
         Icon(
             imageVector = Icons.Default.Favorite, contentDescription = null
         )
