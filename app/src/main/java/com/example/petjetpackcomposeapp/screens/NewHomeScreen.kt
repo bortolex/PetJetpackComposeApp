@@ -7,9 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Face
-import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -40,7 +38,8 @@ fun NewHomeScreen(clickNavigation: () -> Unit) {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BaseTopAppBar(destinationId: String?) {
-    TopAppBar(modifier = Modifier.background(
+    TopAppBar(modifier = Modifier.background( //it's internal background.
+        // So we need to make upper background as transparent
         color = TopAppBarSurfaceColor, shape = RoundedCornerShape(36.dp)
     ), title = { //title in TopAppBar is composable function. So it's not required to have a text.
         // It could be even image or something else
