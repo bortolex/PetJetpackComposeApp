@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PetJetpackComposeApp</string>
+    <string name="title_top_app_bar">Material 3 UI</string>
 </resources>
