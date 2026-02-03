@@ -22,6 +22,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.petjetpackcomposeapp.R
+import com.example.petjetpackcomposeapp.states.AppBarState
 import com.example.petjetpackcomposeapp.ui.theme.TopAppBarSurfaceColor
 
 @Composable
@@ -37,18 +38,28 @@ fun NewHomeScreen(clickNavigation: () -> Unit) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BaseTopAppBar(destinationId: String?) {
+fun BaseTopAppBar(appBarState: AppBarState) {
     TopAppBar(modifier = Modifier.background( //it's internal background.
         // So we need to make upper background as transparent
         color = TopAppBarSurfaceColor, shape = RoundedCornerShape(36.dp)
-    ), title = { //title in TopAppBar is composable function. So it's not required to have a text.
-        // It could be even image or something else
-        Text(text = stringResource(R.string.title_top_app_bar)) },
+    ),
+        title = { //title in TopAppBar is composable function. So it's not required to have a text.
+            // It could be even image or something else
+            Text(text = stringResource(R.string.title_top_app_bar))
+        },
         navigationIcon = {
-        Icon(
-            imageVector = getRelevantAppBarIcon(destinationId = destinationId), contentDescription = null
-        )
-    },
+            if (appBarState.onIconClick != null) {
+                Button(onClick = { appBarState.onIconClick.invoke() }) {
+                    Icon(
+                        imageVector = appBarState.icon, contentDescription = null
+                    )
+                }
+            } else {
+                Icon(
+                    imageVector = appBarState.icon, contentDescription = null
+                )
+            }
+        },
         // Make TopAppBar container transparent so Surface shows
         // (we couldn't apply our own background color and shape without this piece of code)
         colors = TopAppBarDefaults.topAppBarColors(
