@@ -3,6 +3,8 @@ package com.example.petjetpackcomposeapp
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.petjetpackcomposeapp.states.ScreenState
+import com.example.petjetpackcomposeapp.states.UiText
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

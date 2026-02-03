@@ -1,6 +1,4 @@
-package com.example.petjetpackcomposeapp
-
-import androidx.annotation.Keep
+package com.example.petjetpackcomposeapp.states
 
 sealed interface ScreenState<out T> { //todo: investigate question if it was as <T> not <out T>
 
