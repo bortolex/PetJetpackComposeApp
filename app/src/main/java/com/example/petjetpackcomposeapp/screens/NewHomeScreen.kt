@@ -38,7 +38,7 @@ fun NewHomeScreen(clickNavigation: () -> Unit) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BaseTopAppBar(appBarState: AppBarState) {
+fun TopAppBar(appBarState: AppBarState) {
     TopAppBar(modifier = Modifier.background( //it's internal background.
         // So we need to make upper background as transparent
         color = TopAppBarSurfaceColor, shape = RoundedCornerShape(36.dp)

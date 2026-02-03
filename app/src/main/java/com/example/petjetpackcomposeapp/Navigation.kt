@@ -1,8 +1,6 @@
 package com.example.petjetpackcomposeapp
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -12,7 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.petjetpackcomposeapp.screens.BaseTopAppBar
+import com.example.petjetpackcomposeapp.screens.TopAppBar
 import com.example.petjetpackcomposeapp.screens.DetailsScreen
 import com.example.petjetpackcomposeapp.screens.NewHomeScreen
 import com.example.petjetpackcomposeapp.screens.getRelevantAppBarIcon
@@ -34,7 +32,7 @@ fun AppNavGraph() {
                 )
         }
 
-        Scaffold(topBar = { BaseTopAppBar(appBarState) }) { innerPadding ->
+        Scaffold(topBar = { TopAppBar(appBarState) }) { innerPadding ->
                 NavHost(
                         navController = navController,
                         startDestination = "home",
