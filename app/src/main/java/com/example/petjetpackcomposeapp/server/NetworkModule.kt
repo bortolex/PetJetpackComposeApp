@@ -34,6 +34,5 @@ object NetworkModule {
         .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
         .build()
 
-    val api: DummyApi = retrofit.create(DummyApi::class.java)
-
+    val dummyApi: DummyApi by lazy { retrofit.create(DummyApi::class.java) }
 }

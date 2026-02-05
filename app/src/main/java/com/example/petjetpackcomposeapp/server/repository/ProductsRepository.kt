@@ -1,5 +1,6 @@
 package com.example.petjetpackcomposeapp.server.repository
 
+import com.example.petjetpackcomposeapp.server.NetworkModule
 import com.example.petjetpackcomposeapp.server.requests.DummyApi
 import com.example.petjetpackcomposeapp.server.models.Product
 import com.example.petjetpackcomposeapp.server.models.toDomain
@@ -11,9 +12,10 @@ interface ProductsRepository {
     suspend fun getProductDetails(id: Int): Product
 }
 
-class ProductsRepositoryImpl(
+class ProductsRepositoryImpl : ProductsRepository {
+    private val networkModule = NetworkModule
     private val api: DummyApi
-) : ProductsRepository {
+        get() = networkModule.dummyApi
 
     override suspend fun getProducts(limit: Int, skip: Int): List<Product> = withContext(Dispatchers.IO) {
         api.getProducts(limit = limit, skip = skip).products.map { it.toDomain() }
