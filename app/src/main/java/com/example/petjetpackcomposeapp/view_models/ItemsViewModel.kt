@@ -1,4 +1,4 @@
-package com.example.petjetpackcomposeapp
+package com.example.petjetpackcomposeapp.view_models
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel

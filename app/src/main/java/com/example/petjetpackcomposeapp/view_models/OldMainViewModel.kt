@@ -1,8 +1,10 @@
-package com.example.petjetpackcomposeapp
+package com.example.petjetpackcomposeapp.view_models
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.petjetpackcomposeapp.Item
+import com.example.petjetpackcomposeapp.ItemsRepository
 import com.example.petjetpackcomposeapp.states.ScreenState
 import com.example.petjetpackcomposeapp.states.UiText
 import kotlinx.coroutines.flow.MutableStateFlow

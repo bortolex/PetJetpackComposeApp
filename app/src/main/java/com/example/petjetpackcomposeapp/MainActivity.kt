@@ -17,6 +17,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -26,6 +27,10 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 //        enableEdgeToEdge()
         setContent {
+//            val wmVm: ItemsViewModel = viewModel()
+//            val homeViewModel: HomeViewModel = viewModel()
+//            val oldMainViewModel: OldMainViewModel = viewModel()
+
             AppNavGraph()
 //            HelloWorld()
         }

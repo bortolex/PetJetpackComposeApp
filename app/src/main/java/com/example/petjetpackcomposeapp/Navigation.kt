@@ -18,6 +18,7 @@ import com.example.petjetpackcomposeapp.states.AppBarState
 
 @Composable
 fun AppNavGraph() {
+
         val navController =
                 rememberNavController() // it's object which manages navigation between composable screens
         val backStackEntry by navController.currentBackStackEntryAsState()
@@ -49,20 +50,3 @@ fun AppNavGraph() {
                 }
         }
 }
-
-//        NavHost(navController = navController, startDestination = "home") {
-//                composable("home") {
-//                        NewHomeScreen {
-//                                navController.navigate("details")
-//                        }
-//                }
-//
-//                composable("details") {
-//                        DetailsScreen()
-//                }
-//        }
-
-//        NavHost (
-//                navController = navController,
-//                startDestination =
-//        )
