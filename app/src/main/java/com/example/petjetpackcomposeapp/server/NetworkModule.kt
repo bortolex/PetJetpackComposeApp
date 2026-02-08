@@ -1,38 +1,59 @@
 package com.example.petjetpackcomposeapp.server
 
 import com.example.petjetpackcomposeapp.server.requests.DummyApi
-import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import kotlinx.serialization.ExperimentalSerializationApi
-import kotlinx.serialization.json.Json
-import okhttp3.MediaType.Companion.toMediaType
+import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 object NetworkModule {
 
     private const val BASE_URL = "https://dummyjson.com/"
 
-    @OptIn(ExperimentalSerializationApi::class)
-    private val json = Json {
-        ignoreUnknownKeys = true
-        isLenient = true
-        explicitNulls = false
-    }
+//    @OptIn(ExperimentalSerializationApi::class)
+//    private val json = Json {
+//        ignoreUnknownKeys = true
+//        isLenient = true
+//        explicitNulls = false
+//    }
 
+//    private val logging = HttpLoggingInterceptor().apply {
+//        level = HttpLoggingInterceptor.Level.BASIC
+//    }
     private val logging = HttpLoggingInterceptor().apply {
-        level = HttpLoggingInterceptor.Level.BASIC
+        level = HttpLoggingInterceptor.Level.BODY
     }
 
-    private val okHttp: OkHttpClient = OkHttpClient.Builder()
+    private val okHttp: OkHttpClient = /*OkHttpClient.Builder()
         .addInterceptor(logging)
-        .build()
+        .build()*/
+        OkHttpClient().newBuilder().connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(45, TimeUnit.SECONDS).writeTimeout(30, TimeUnit.SECONDS).apply {
+//                if (BuildConfig.DEBUG) {
+                    addInterceptor(logging)
+//                }
 
-    private val retrofit: Retrofit = Retrofit.Builder()
+            }.build()
+
+//    Retrofit.Builder().baseUrl(environmentConfigManager.serverUrl)
+//    .addConverterFactory(ScalarsConverterFactory.create())
+//    .addConverterFactory(GsonConverterFactory.create(GsonBuilder().apply {
+//        if (includeNulls) {
+//            serializeNulls()
+//        }
+//    }.disableHtmlEscaping().create())).apply {
+//        client(if (shortTimeOuts) httpClientShortTimeOuts else httpClient)
+//    }.build().create(clazz)
+
+    private val retrofit: Retrofit.Builder = Retrofit.Builder()
         .baseUrl(BASE_URL)
-        .client(okHttp)
-        .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
-        .build()
+        .client(unsafeOkHttpClient()).addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
 
-    val dummyApi: DummyApi by lazy { retrofit.create(DummyApi::class.java) }
+//    fun f(){
+//        retrofit.build().create(DummyApi::class.java)
+//    }
+
+    val dummyApi: DummyApi by lazy { retrofit.build().create(DummyApi::class.java) }
 }

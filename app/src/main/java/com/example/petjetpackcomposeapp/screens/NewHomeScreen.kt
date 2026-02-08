@@ -1,5 +1,6 @@
 package com.example.petjetpackcomposeapp.screens
 
+import androidx.activity.ComponentActivity
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,14 +20,27 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.petjetpackcomposeapp.R
 import com.example.petjetpackcomposeapp.states.AppBarState
 import com.example.petjetpackcomposeapp.ui.theme.TopAppBarSurfaceColor
+import com.example.petjetpackcomposeapp.viewModels.MainViewModelFactory
+import com.example.petjetpackcomposeapp.viewModels.newOne.NewHomeViewModel
 
 @Composable
 fun NewHomeScreen(clickNavigation: () -> Unit) {
+//    val owner = LocalViewModelStoreOwner.current!!
+    val activity = LocalContext.current as ComponentActivity
+    val viewModel: NewHomeViewModel = viewModel(
+        factory = MainViewModelFactory(
+            owner = activity
+        )
+    )
+
     Column(
         modifier = Modifier.fillMaxSize()
     ) {

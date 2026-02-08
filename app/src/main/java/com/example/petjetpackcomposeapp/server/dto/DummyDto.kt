@@ -1,21 +1,21 @@
 package com.example.petjetpackcomposeapp.server.dto
 
 import androidx.annotation.Keep
-import kotlinx.serialization.SerialName
+import com.google.gson.annotations.SerializedName
 
 @Keep
 data class ProductsResponseDto(
-    @SerialName("products") val products: List<ProductDto> = emptyList(),
-    @SerialName("total") val total: Int = 0,
-    @SerialName("skip") val skip: Int = 0,
-    @SerialName("limit") val limit: Int = 0
+    @SerializedName("products") val products: List<ProductDto> = emptyList(),
+    @SerializedName("total") val total: Int = 0,
+    @SerializedName("skip") val skip: Int = 0,
+    @SerializedName("limit") val limit: Int = 0
 )
 
 @Keep
 data class ProductDto(
-    @SerialName("id") val id: Int,
-    @SerialName("title") val title: String,
-    @SerialName("description") val description: String,
-    @SerialName("price") val price: Double,
-    @SerialName("thumbnail") val thumbnail: String? = null
+    @SerializedName("id") val id: Int,
+    @SerializedName("title") val title: String,
+    @SerializedName("description") val description: String,
+    @SerializedName("price") val price: Double,
+    @SerializedName("thumbnail") val thumbnail: String? = null
 )

@@ -62,9 +62,19 @@ dependencies {
     implementation(libs.hilt.android)
 
     implementation(libs.retrofit.core)
-    implementation(libs.retrofit.kotlinx.serialization)
+//    implementation(libs.retrofit.kotlinx.serialization)
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging)
-    implementation(libs.kotlinx.serialization.json)
+//    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.gson)
+    implementation(libs.retrofit.gson)
+//    implementation(libs.retrofit.converter.gson)
 //    kapt(libs.hilt.android.compiler)
+//    implementation(libs.kotlinx.serialization.json)
+
+//    implementation(libs.retrofit.core)
+//    implementation(libs.retrofit.kotlinx.serialization)
+
+//    implementation(libs.okhttp)
+//    implementation(libs.okhttp.logging)
 }

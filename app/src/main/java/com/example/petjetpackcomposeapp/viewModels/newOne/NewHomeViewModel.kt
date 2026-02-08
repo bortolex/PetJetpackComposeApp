@@ -1,4 +1,4 @@
-package com.example.petjetpackcomposeapp.view_models.newOne
+package com.example.petjetpackcomposeapp.viewModels.newOne
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
