@@ -2,6 +2,7 @@ package com.example.petjetpackcomposeapp.screens
 
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -17,13 +18,13 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.petjetpackcomposeapp.R
 import com.example.petjetpackcomposeapp.states.AppBarState
@@ -42,11 +43,14 @@ fun NewHomeScreen(clickNavigation: () -> Unit) {
     )
 
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Bottom
     ) {
-        Button(modifier = Modifier.padding(top = 25.dp), onClick = {
+        Button(modifier = Modifier.padding(/*top = 25.dp,*/ bottom = 24.dp).align(Alignment.CenterHorizontally), onClick = {
             clickNavigation.invoke()
-        }) { }
+        }) {
+            Text("go to DetailsScreen")
+        }
     }
 }
 

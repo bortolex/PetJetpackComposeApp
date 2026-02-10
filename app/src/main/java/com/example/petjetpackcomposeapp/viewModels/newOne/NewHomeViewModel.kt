@@ -6,7 +6,7 @@ import com.example.petjetpackcomposeapp.server.repository.ProductsRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class NewHomeViewModel(val repository: ProductsRepository) : ViewModel() {
+class NewHomeViewModel(private val repository: ProductsRepository) : ViewModel() {
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
