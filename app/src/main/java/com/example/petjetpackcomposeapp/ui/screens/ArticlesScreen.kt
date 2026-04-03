@@ -3,8 +3,12 @@ package com.example.petjetpackcomposeapp.ui.screens
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -13,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.unit.dp
 import com.example.petjetpackcomposeapp.project.presentation.ArticlesViewModel
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -40,7 +45,20 @@ fun ArticlesScreen() {
 
 @Composable
 fun ArticlesListView(data: List<Article>) {
-//    LazyColumn(data.size) { }
+    LazyColumn(modifier = Modifier) {
+        items(data) { item ->
+            Column(modifier = Modifier.padding(horizontal = 16.dp, vertical = 16.dp)) {
+                Text(item.title, style = TextStyle(textDecoration = TextDecoration.Underline))
+                Spacer(Modifier.height(24.dp))
+                Text(item.content, style = TextStyle(textDecoration = TextDecoration.Underline))
+                Spacer(Modifier.height(24.dp))
+                Text(item.url, style = TextStyle(textDecoration = TextDecoration.Underline))
+                Spacer(Modifier.height(24.dp))
+            }
+        }
+    }
+    //how to present UI of item
+//    title, content, and url for img
 }
 
 @Composable
