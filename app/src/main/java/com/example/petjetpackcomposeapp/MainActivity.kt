@@ -30,15 +30,15 @@ class MainActivity : ComponentActivity() {
 
         }
 
-        val viewModel = ArticlesViewModel()
+//        val viewModel = ArticlesViewModel()
 
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED){
-                viewModel.articles.collect{ state ->
-
-                }
-            }
-        }
+//        lifecycleScope.launch {
+//            repeatOnLifecycle(Lifecycle.State.STARTED){
+//                viewModel.articles.collect{ state ->
+//
+//                }
+//            }
+//        }
 
     }
     @Preview (showSystemUi = true)

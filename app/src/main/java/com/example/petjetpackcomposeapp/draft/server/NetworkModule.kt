@@ -1,3 +1,4 @@
+/*
 package com.example.petjetpackcomposeapp.draft.server
 
 import com.example.petjetpackcomposeapp.draft.server.requests.DummyApi
@@ -26,9 +27,11 @@ object NetworkModule {
         level = HttpLoggingInterceptor.Level.BODY
     }
 
-    private val okHttp: OkHttpClient = /*OkHttpClient.Builder()
+    private val okHttp: OkHttpClient = */
+/*OkHttpClient.Builder()
         .addInterceptor(logging)
-        .build()*/
+        .build()*//*
+
         OkHttpClient().newBuilder().connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(45, TimeUnit.SECONDS).writeTimeout(30, TimeUnit.SECONDS).apply {
 //                if (BuildConfig.DEBUG) {
@@ -56,4 +59,4 @@ object NetworkModule {
 //    }
 
     val dummyApi: DummyApi by lazy { retrofit.build().create(DummyApi::class.java) }
-}
+}*/

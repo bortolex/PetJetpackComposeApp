@@ -1,6 +1,6 @@
 package com.example.petjetpackcomposeapp.draft.server.models
 
-import com.example.petjetpackcomposeapp.server.dto.ProductDto
+import com.example.petjetpackcomposeapp.draft.server.dto.ProductDto
 
 data class Product(
     val id: Int,

@@ -1,9 +1,13 @@
+/*
 package com.example.petjetpackcomposeapp.draft.server.repository
 
+import com.example.petjetpackcomposeapp.draft.server.NetworkModule
+import com.example.petjetpackcomposeapp.draft.server.models.Product
+import com.example.petjetpackcomposeapp.draft.server.requests.DummyApi
 import com.example.petjetpackcomposeapp.server.NetworkModule
-import com.example.petjetpackcomposeapp.server.requests.DummyApi
 import com.example.petjetpackcomposeapp.server.models.Product
 import com.example.petjetpackcomposeapp.server.models.toDomain
+import com.example.petjetpackcomposeapp.server.requests.DummyApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -25,3 +29,4 @@ class ProductsRepositoryImpl : ProductsRepository {
         api.getProductDetails(id).toDomain()
     }
 }
+*/
