@@ -1,17 +1,15 @@
-package com.example.petjetpackcomposeapp.presentation
+package com.example.petjetpackcomposeapp.project.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.petjetpackcomposeapp.domain.Article
-import com.example.petjetpackcomposeapp.domain.GetArticlesUseCase
+import com.example.petjetpackcomposeapp.project.domain.Article
+import com.example.petjetpackcomposeapp.project.domain.GetArticlesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel

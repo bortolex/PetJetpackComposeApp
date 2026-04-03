@@ -1,4 +1,4 @@
-package com.example.petjetpackcomposeapp.data
+package com.example.petjetpackcomposeapp.project.data
 
 import retrofit2.http.GET
 

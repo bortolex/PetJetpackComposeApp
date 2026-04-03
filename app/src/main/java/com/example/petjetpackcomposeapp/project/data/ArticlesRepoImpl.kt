@@ -1,11 +1,9 @@
-package com.example.petjetpackcomposeapp.data
+package com.example.petjetpackcomposeapp.project.data
 
-import com.example.petjetpackcomposeapp.domain.Article
-import com.example.petjetpackcomposeapp.domain.ArticlesRepo
+import com.example.petjetpackcomposeapp.project.domain.Article
+import com.example.petjetpackcomposeapp.project.domain.ArticlesRepo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import org.jsoup.Jsoup

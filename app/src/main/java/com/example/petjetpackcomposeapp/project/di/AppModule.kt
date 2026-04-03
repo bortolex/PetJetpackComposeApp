@@ -1,4 +1,4 @@
-package com.example.petjetpackcomposeapp.di
+package com.example.petjetpackcomposeapp.project.di
 
 import dagger.Module
 import dagger.Provides

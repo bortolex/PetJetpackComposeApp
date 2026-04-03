@@ -14,11 +14,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
-import com.example.petjetpackcomposeapp.presentation.ArticlesViewModel
-import kotlinx.coroutines.launch
 
 
 class MainActivity : ComponentActivity() {

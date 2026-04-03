@@ -1,4 +1,4 @@
-package com.example.petjetpackcomposeapp.data
+package com.example.petjetpackcomposeapp.project.data
 
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName

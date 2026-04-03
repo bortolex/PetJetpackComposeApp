@@ -1,4 +1,4 @@
-package com.example.petjetpackcomposeapp.domain
+package com.example.petjetpackcomposeapp.project.domain
 
 data class Article(
     val title: String,
