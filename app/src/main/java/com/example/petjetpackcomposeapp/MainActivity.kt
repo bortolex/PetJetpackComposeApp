@@ -14,6 +14,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import com.example.petjetpackcomposeapp.presentation.ArticlesViewModel
+import kotlinx.coroutines.launch
 
 
 class MainActivity : ComponentActivity() {
@@ -22,13 +27,19 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 //        enableEdgeToEdge()
         setContent {
-//            val wmVm: ItemsViewModel = viewModel()
-//            val homeViewModel: HomeViewModel = viewModel()
-//            val oldMainViewModel: OldMainViewModel = viewModel()
 
-            AppNavGraph()
-//            HelloWorld()
         }
+
+        val viewModel = ArticlesViewModel()
+
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED){
+                viewModel.articles.collect{ state ->
+
+                }
+            }
+        }
+
     }
     @Preview (showSystemUi = true)
     @Composable
