@@ -1,5 +1,8 @@
 package com.example.petjetpackcomposeapp.project.di
 
+import com.example.petjetpackcomposeapp.project.data.ArticleApiService
+import com.example.petjetpackcomposeapp.project.data.ArticlesRepoImpl
+import com.example.petjetpackcomposeapp.project.domain.ArticlesRepo
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,7 +24,16 @@ object AppModule {
             .build()
     }
 
+    @Provides
+    @Singleton
+    fun provideArticleApi(retrofit: Retrofit): ArticleApiService {
+        return retrofit.create(ArticleApiService::class.java)
+    }
 
-
+    @Provides
+    @Singleton
+    fun provideArticlesRepo(service: ArticleApiService): ArticlesRepo {
+        return ArticlesRepoImpl(service)
+    }
 
 }

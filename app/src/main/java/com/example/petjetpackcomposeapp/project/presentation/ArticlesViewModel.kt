@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.petjetpackcomposeapp.project.domain.Article
 import com.example.petjetpackcomposeapp.project.domain.GetArticlesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -20,9 +21,10 @@ class ArticlesViewModel @Inject constructor(val getArticlesUseCase: GetArticlesU
     }
     val articles: StateFlow<ArticlesUiState> = _articles.asStateFlow()
 
-    private fun fetchArticles(){
+     fun fetchArticles(){
         viewModelScope.launch {
             _articles.emit(ArticlesUiState.Loading)
+            delay(2000)
             getArticlesUseCase()
                 .onStart { _articles.emit(ArticlesUiState.Loading) }
                 .collect { result ->
