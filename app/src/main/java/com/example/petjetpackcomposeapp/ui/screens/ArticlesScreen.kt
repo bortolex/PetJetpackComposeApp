@@ -74,8 +74,6 @@ fun ArticlesListView(data: List<Article>,  onItemClickSuccess: (Article) -> Unit
             }
         }
     }
-    //how to present UI of item
-//    title, content, and url for img
 }
 
 @Composable
