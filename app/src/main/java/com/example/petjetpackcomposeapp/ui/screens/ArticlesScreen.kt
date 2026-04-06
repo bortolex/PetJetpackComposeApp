@@ -62,13 +62,13 @@ fun ArticlesListView(data: List<Article>,  onItemClickSuccess: (Article) -> Unit
                 .padding(horizontal = 16.dp, vertical = 8.dp)
                 .clickable { onItemClickSuccess(item) },
                 shape = RoundedCornerShape(16.dp),
-                color = Color.White,
+                color = Color.Gray,
                 shadowElevation = 6.dp) { }
             Column(modifier = Modifier.padding(horizontal = 16.dp, vertical = 16.dp)) {
                 Text(item.title, style = TextStyle(textDecoration = TextDecoration.Underline))
                 Spacer(Modifier.height(24.dp))
-                Text(item.content, style = TextStyle(textDecoration = TextDecoration.Underline))
-                Spacer(Modifier.height(24.dp))
+//                Text(item.content, style = TextStyle(textDecoration = TextDecoration.Underline))
+//                Spacer(Modifier.height(24.dp))
                 Text(item.url, style = TextStyle(textDecoration = TextDecoration.Underline))
                 Spacer(Modifier.height(24.dp))
             }
