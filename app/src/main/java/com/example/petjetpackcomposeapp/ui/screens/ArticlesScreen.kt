@@ -28,7 +28,7 @@ import com.example.petjetpackcomposeapp.project.domain.Article
 import com.example.petjetpackcomposeapp.project.presentation.ArticlesUiState
 
 @Composable
-fun ArticlesScreen() {
+fun ArticlesScreen(onItemClick: (Article) -> Unit = {}) {
     val articlesViewModel: ArticlesViewModel = hiltViewModel()
     val state = articlesViewModel.articles.collectAsStateWithLifecycle()
     when (state.value) {
@@ -42,25 +42,25 @@ fun ArticlesScreen() {
         }
         is ArticlesUiState.Success -> {
             ArticlesListView((state.value as ArticlesUiState.Success).data){
-
+                onItemClick.invoke(it)
             }
         }
     }
 }
 
 @Composable
-fun ArticleDetails(){
+fun ArticleDetailsScreen(articleId: String?) {
 
 }
 
 @Composable
-fun ArticlesListView(data: List<Article>,  onItemClick: (Article) -> Unit = {}) {
+fun ArticlesListView(data: List<Article>,  onItemClickSuccess: (Article) -> Unit = {}) {
     LazyColumn(modifier = Modifier) {
         items(data) { item ->
             Surface( modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp, vertical = 8.dp)
-                .clickable { onItemClick(item) },
+                .clickable { onItemClickSuccess(item) },
                 shape = RoundedCornerShape(16.dp),
                 color = Color.White,
                 shadowElevation = 6.dp) { }
