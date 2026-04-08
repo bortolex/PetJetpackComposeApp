@@ -16,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class UserSearchViewModel @Inject constructor(val repository: UserRepository) : ViewModel() {
 
-    val _listQueries/*: Flow<SearchUiState>*/ by lazy {
+    val _listQueries: MutableStateFlow<SearchUiState>/*: Flow<SearchUiState>*/ by lazy {
         MutableStateFlow(SearchUiState.Initial)
     }
     val searchResults = _listQueries.asStateFlow()
@@ -30,6 +30,7 @@ class UserSearchViewModel @Inject constructor(val repository: UserRepository) : 
         }
         viewModelScope.launch(Dispatchers.IO) {
             delay(500)
+            _listQueries.emit(SearchUiState.Loading)
 //            Channel
             repository.searchUsers(query)
         }
