@@ -1,1 +1,0 @@
-"route" field in NavDestination class gives us name of "destination" of screen

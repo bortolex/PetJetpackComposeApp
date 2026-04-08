@@ -14,8 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import com.example.petjetpackcomposeapp.ui.screens.AppNavHost
-import com.example.petjetpackcomposeapp.ui.screens.ArticlesScreen
+import com.example.petjetpackcomposeapp.ui.screens.UserSearchScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -26,20 +25,10 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 //        enableEdgeToEdge()
         setContent {
-            AppNavHost()
+            UserSearchScreen()
         }
-
-//        val viewModel = ArticlesViewModel()
-
-//        lifecycleScope.launch {
-//            repeatOnLifecycle(Lifecycle.State.STARTED){
-//                viewModel.articles.collect{ state ->
-//
-//                }
-//            }
-//        }
-
     }
+
     @Preview (showSystemUi = true)
     @Composable
     fun HelloWorld() {
