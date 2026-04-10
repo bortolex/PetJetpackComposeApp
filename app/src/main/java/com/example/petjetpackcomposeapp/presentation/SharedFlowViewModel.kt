@@ -36,15 +36,11 @@ class SharedFlowViewModel @Inject constructor(val repository: UserRepository) : 
         viewModelScope.launch {
             queryFlow.debounce(500).collectLatest {
                 _searchResultState.value = SearchUiState.Loading
-                withContext(Dispatchers.IO){
-                    val result = repository.searchUsers(queryFlow.value)
-                }.apply {
-                    _searchResultState.emit(SearchUiState.Success(it))
+                val result = withContext(Dispatchers.IO) {
+                    return@withContext repository.searchUsers(queryFlow.value)
                 }
-
+                _searchResultState.emit(SearchUiState.Success(result))
             }
         }
     }
-
-
 }
