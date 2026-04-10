@@ -25,7 +25,7 @@ fun UserSearchScreen() {
 
     when (resultState.value) {
         is SearchUiState.Initial ->{
-
+            InitialView { }
         }
         is SearchUiState.Success -> {
             SearchResultsListView((resultState.value as SearchUiState.Success).data) { userQuery ->
@@ -38,12 +38,10 @@ fun UserSearchScreen() {
             }
         }
         is SearchUiState.Empty -> {
-            //todo: would be implemented in future
+            InitialView {  }
         }
         is SearchUiState.Error -> {
-            //todo: would be implemented in future
-        }
-        else -> {//todo: would be implemented in future
+            InitialView {  }
         }
     }
 }
