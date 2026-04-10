@@ -10,15 +10,17 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.petjetpackcomposeapp.presentation.ChannelViewModel
 import com.example.petjetpackcomposeapp.presentation.UserSearchViewModel
 
 @Composable
 fun UserSearchScreen() {
-    val userSearchViewModel: UserSearchViewModel = hiltViewModel()
-    userSearchViewModel
+    val userSearchViewModel: ChannelViewModel = hiltViewModel()
+
     Column() {
         var text by remember { mutableStateOf("") }
         TextField(value = text, onValueChange = {
+            userSearchViewModel.onQueryChanged(it)
             text = it
         })
         LazyColumn() {
