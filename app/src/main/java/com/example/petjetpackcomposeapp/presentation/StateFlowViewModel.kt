@@ -15,9 +15,9 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
-class SharedFlowViewModel @Inject constructor(val repository: UserRepository) : ViewModel() {
+class StateFlowViewModel @Inject constructor(val repository: UserRepository) : ViewModel() {
 
-    val _searchResultState: MutableStateFlow<SearchUiState> =
+    private val _searchResultState: MutableStateFlow<SearchUiState> =
         MutableStateFlow(SearchUiState.Initial)
     val searchResultState = _searchResultState.asStateFlow()
 
