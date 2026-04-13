@@ -15,33 +15,36 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.petjetpackcomposeapp.presentation.ChannelViewModel
 import com.example.petjetpackcomposeapp.presentation.SearchUiState
-import com.example.petjetpackcomposeapp.presentation.StateFlowViewModel
 
 @Composable
 fun UserSearchScreen() {
-    val viewModel: StateFlowViewModel = hiltViewModel()
-    val resultState = viewModel.searchResultState.collectAsStateWithLifecycle()
+    val viewModel: ChannelViewModel = hiltViewModel()
+    val resultState = viewModel.searchResults.collectAsStateWithLifecycle()
+
+    val onQueryChanged: (String) -> Unit = { userQuery ->
+        viewModel.onQueryChanged(query = userQuery)
+    }
 
     when (resultState.value) {
-        is SearchUiState.Initial ->{
-            InitialView { }
+        is SearchUiState.Initial -> {
+            InitialView(onQueryChanged = onQueryChanged)
         }
         is SearchUiState.Success -> {
-            SearchResultsListView((resultState.value as SearchUiState.Success).data) { userQuery ->
-                viewModel.onQueryChanged(query = userQuery)
-            }
+            SearchResultsListView(
+                list = (resultState.value as SearchUiState.Success).data,
+                onQueryChanged = onQueryChanged
+            )
         }
         is SearchUiState.Loading -> {
-            LoadingView { userQuery ->
-                viewModel.onQueryChanged(query = userQuery)
-            }
+            LoadingView(onQueryChanged = onQueryChanged)
         }
         is SearchUiState.Empty -> {
-            InitialView {  }
+            InitialView(onQueryChanged = onQueryChanged)
         }
         is SearchUiState.Error -> {
-            InitialView {  }
+            InitialView(onQueryChanged = onQueryChanged)
         }
     }
 }
