@@ -1,0 +1,10 @@
+Change the order of given code to match the image https://drive.google.com/file/d/11rPKHYuluHQ2iKPKsoU7lVbAHP5wH6ZG/view?usp=sharing:
+
+Box(
+     modifier = Modifier
+      .border(2.dp, Color.Green)
+      .background(Color.Blue)
+      .padding(20.dp)
+      .background(Color.Red)
+      .size(100.dp)
+)
