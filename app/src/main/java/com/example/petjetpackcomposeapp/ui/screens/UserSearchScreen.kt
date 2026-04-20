@@ -15,13 +15,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.petjetpackcomposeapp.presentation.ChannelViewModel
 import com.example.petjetpackcomposeapp.presentation.SearchUiState
+import com.example.petjetpackcomposeapp.presentation.StateFlowViewModel
 
 @Composable
 fun UserSearchScreen() {
-    val viewModel: ChannelViewModel = hiltViewModel()
-    val resultState = viewModel.searchResults.collectAsStateWithLifecycle()
+    val viewModel: StateFlowViewModel = hiltViewModel()
+    val resultState = viewModel.searchResultState.collectAsStateWithLifecycle()
 
     val onQueryChanged: (String) -> Unit = { userQuery ->
         viewModel.onQueryChanged(query = userQuery)
