@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">PetJetpackComposeApp</string>
     <string name="title_top_app_bar">Material 3 UI</string>
+    <string name="increment">Increment</string>
+    <string name="label">label</string>
 </resources>
