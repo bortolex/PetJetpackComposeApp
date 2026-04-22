@@ -76,5 +76,4 @@ fun LabelText(wrapper: Wrapper) {
     )
 }
 
-@Stable
 data class Wrapper(val label: Any)
