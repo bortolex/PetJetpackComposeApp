@@ -86,4 +86,6 @@ dependencies {
     ksp(libs.hilt.compiler)
 
     implementation(libs.jsoup)
+
+    implementation(project(":compose_navigation"))
 }
