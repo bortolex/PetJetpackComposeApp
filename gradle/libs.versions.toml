@@ -20,6 +20,8 @@ ksp = "2.0.0-1.0.21"
 hilt = "2.52"
 hilt_work = "1.2.0"
 nanvigation_compose = "1.2.0"
+appcompat = "1.6.1"
+material = "1.10.0"
 #kotlinxSerialization = "1.6.3"
 
 [libraries]
@@ -53,12 +55,15 @@ jsoup = { module = "org.jsoup:jsoup", version.ref = "jsoup" }
 
 hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "nanvigation_compose" }
 hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hilt_work" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 #kotlin-serialization = {
 #id = "org.jetbrains.kotlin.plugin.serialization",
 #version.ref = "kotlin" }
