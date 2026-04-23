@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">PetJetpackComposeApp</string>
     <string name="title_top_app_bar">Material 3 UI</string>
+    <string name="add_item">Add Item</string>
+    <string name="items_name">Items List</string>
+    <string name="profile_name">Profile</string>
+    <string name="settings_name">Settings</string>
 </resources>
