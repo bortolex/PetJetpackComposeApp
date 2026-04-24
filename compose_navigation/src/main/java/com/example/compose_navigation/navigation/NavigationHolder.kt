@@ -12,6 +12,10 @@ data class NavigationHolder(val routeManager: RouteManager,
 @Composable
 fun rememberNavigation(initialDestination: Destination): NavigationHolder {
     return remember {
-        TODO()
+        val impl = NavigationStateImpl(initialDestination)
+        NavigationHolder(
+            routeManager = impl,
+            navigationState = impl
+        )
     }
 }
