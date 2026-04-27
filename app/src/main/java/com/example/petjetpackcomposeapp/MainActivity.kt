@@ -19,6 +19,10 @@ import com.example.petjetpackcomposeapp.ui.screens.AddItemScreen
 import com.example.petjetpackcomposeapp.ui.screens.ItemsScreen
 import com.example.petjetpackcomposeapp.ui.screens.ProfileScreen
 import com.example.petjetpackcomposeapp.ui.screens.SettingsScreen
+import com.example.petjetpackcomposeapp.ui.screens.compositionlocal.Example1Screen
+import com.example.petjetpackcomposeapp.ui.screens.compositionlocal.Example2Screen
+import com.example.petjetpackcomposeapp.ui.screens.compositionlocal.Task1Screen
+import com.example.petjetpackcomposeapp.ui.screens.compositionlocal.Task2Screen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,7 +31,10 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AppContent()
+//            Example1Screen() // зміна імені для кожної вкладеної функції неявно (через механізм composition local)
+//            Example2Screen()
+//            Task1Screen()
+            Task2Screen()
         }
     }
 }
