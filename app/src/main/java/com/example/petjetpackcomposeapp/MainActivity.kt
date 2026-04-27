@@ -19,6 +19,7 @@ import com.example.petjetpackcomposeapp.ui.screens.AddItemScreen
 import com.example.petjetpackcomposeapp.ui.screens.ItemsScreen
 import com.example.petjetpackcomposeapp.ui.screens.ProfileScreen
 import com.example.petjetpackcomposeapp.ui.screens.SettingsScreen
+import com.example.petjetpackcomposeapp.ui.theme.AppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,7 +28,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AppContent()
+            AppTheme(dynamicColor = false) {
+                AppContent()
+            }
         }
     }
 }

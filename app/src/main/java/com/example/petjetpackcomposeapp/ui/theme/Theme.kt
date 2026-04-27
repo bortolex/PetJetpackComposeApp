@@ -316,7 +316,7 @@ val unspecified_scheme = ColorFamily(
 @Composable
 fun AppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
+    // Dynamic color is available on Android 12+ (if it's true we'll take theme color from device)
     dynamicColor: Boolean = true,
     content: @Composable() () -> Unit
 ) {
