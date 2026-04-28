@@ -15,12 +15,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.example.compose_navigation.navigation.NavigationHost
 import com.example.compose_navigation.navigation.rememberNavigation
-import com.example.petjetpackcomposeapp.ui.dialogs.DialogApp
 import com.example.petjetpackcomposeapp.ui.screens.AddItemScreen
 import com.example.petjetpackcomposeapp.ui.screens.ItemsScreen
 import com.example.petjetpackcomposeapp.ui.screens.ProfileScreen
 import com.example.petjetpackcomposeapp.ui.screens.SettingsScreen
-import com.example.petjetpackcomposeapp.ui.texts.ClassicTextField
 import com.example.petjetpackcomposeapp.ui.texts.TextFieldWithBorders
 import com.example.petjetpackcomposeapp.ui.theme.AppTheme
 import dagger.hilt.android.AndroidEntryPoint
