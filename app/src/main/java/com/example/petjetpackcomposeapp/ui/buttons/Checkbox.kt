@@ -3,6 +3,7 @@ package com.example.petjetpackcomposeapp.ui.buttons
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Checkbox
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -18,11 +19,10 @@ fun ClassicCheckBox() {
     var isChecked by remember { mutableStateOf(false) }
     Box(
         modifier = Modifier
-            .fillMaxSize()
+            .wrapContentSize()
             .padding(top = 16.dp, start = 16.dp),
         contentAlignment = Alignment.TopStart
     ) {
-
         Checkbox(checked = isChecked, onCheckedChange = { changeChecked ->
             isChecked = changeChecked
         })
