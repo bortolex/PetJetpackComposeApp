@@ -21,6 +21,7 @@ import com.example.petjetpackcomposeapp.ui.screens.ItemsScreen
 import com.example.petjetpackcomposeapp.ui.screens.ProfileScreen
 import com.example.petjetpackcomposeapp.ui.screens.SettingsScreen
 import com.example.petjetpackcomposeapp.ui.texts.ClassicTextField
+import com.example.petjetpackcomposeapp.ui.texts.TextFieldWithBorders
 import com.example.petjetpackcomposeapp.ui.theme.AppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -32,7 +33,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             AppTheme(dynamicColor = false) {
 //                DialogApp(Modifier)
-                ClassicTextField()
+                TextFieldWithBorders()
             }
         }
     }
