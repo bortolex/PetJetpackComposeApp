@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.example.compose_navigation.navigation.NavigationHost
 import com.example.compose_navigation.navigation.rememberNavigation
+import com.example.petjetpackcomposeapp.ui.buttons.ClassicCheckBox
 import com.example.petjetpackcomposeapp.ui.screens.AddItemScreen
 import com.example.petjetpackcomposeapp.ui.screens.ItemsScreen
 import com.example.petjetpackcomposeapp.ui.screens.ProfileScreen
@@ -31,7 +32,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             AppTheme(dynamicColor = false) {
 //                DialogApp(Modifier)
-                TextFieldWithBorders()
+                ClassicCheckBox()
             }
         }
     }
