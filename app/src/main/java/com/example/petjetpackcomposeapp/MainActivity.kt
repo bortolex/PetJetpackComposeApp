@@ -20,6 +20,7 @@ import com.example.petjetpackcomposeapp.ui.screens.AddItemScreen
 import com.example.petjetpackcomposeapp.ui.screens.ItemsScreen
 import com.example.petjetpackcomposeapp.ui.screens.ProfileScreen
 import com.example.petjetpackcomposeapp.ui.screens.SettingsScreen
+import com.example.petjetpackcomposeapp.ui.texts.ClassicTextField
 import com.example.petjetpackcomposeapp.ui.theme.AppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -30,8 +31,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AppTheme(dynamicColor = false) {
-//                AppContent()
-                DialogApp(Modifier)
+//                DialogApp(Modifier)
+                ClassicTextField()
             }
         }
     }
