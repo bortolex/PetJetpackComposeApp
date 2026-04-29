@@ -29,7 +29,7 @@ fun PreviewContainer(){
 fun ContainerColumn(name: String /*= "Test name"*/, content: @Composable ColumnScope.() -> Unit /*= {}*/) {
     Card(
         modifier = Modifier
-            .wrapContentSize()
+//            .wrapContentSize()
             .fillMaxWidth()
             .padding(16.dp)
             .clip(RoundedCornerShape(24.dp))/*, shape = RectangleShape*/
