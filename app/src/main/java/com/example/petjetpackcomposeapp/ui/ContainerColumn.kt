@@ -35,7 +35,7 @@ fun ContainerColumn(name: String /*= "Test name"*/, content: @Composable ColumnS
             .clip(RoundedCornerShape(24.dp))/*, shape = RectangleShape*/
     ) {
         Column() {
-            Text(name, fontSize = 23.sp, modifier = Modifier.padding(16.dp))
+            Text(name, fontSize = 24.sp, modifier = Modifier.padding(16.dp))
             content()
         }
     }

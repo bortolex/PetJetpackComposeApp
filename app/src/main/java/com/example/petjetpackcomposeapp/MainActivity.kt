@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import com.example.compose_navigation.navigation.NavigationHost
 import com.example.compose_navigation.navigation.rememberNavigation
 import com.example.petjetpackcomposeapp.ui.ContainerColumn
+import com.example.petjetpackcomposeapp.ui.buttons.ButtonAndCounter
 import com.example.petjetpackcomposeapp.ui.buttons.ClassicCheckBox
 import com.example.petjetpackcomposeapp.ui.screens.AddItemScreen
 import com.example.petjetpackcomposeapp.ui.screens.ItemsScreen
@@ -41,7 +42,7 @@ class MainActivity : ComponentActivity() {
 //                ClassicCheckBox()
                 Column() {
                     ContainerColumn("Button Counter example") {
-
+                        ButtonAndCounter()
                     }
 
                     ContainerColumn("Check Box Example") {
