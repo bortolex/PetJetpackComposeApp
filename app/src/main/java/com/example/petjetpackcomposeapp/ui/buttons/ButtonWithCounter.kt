@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,6 +28,12 @@ fun ButtonAndCounter() {
             Text("Click me", fontSize = 20.sp)
         }
         Spacer(modifier = Modifier.height(12.dp))
-        Text("Count of clicks: $counterClick", fontSize = 16.sp)
+        Text(
+            "Count of clicks: $counterClick",
+            fontSize = 16.sp,
+            modifier = Modifier
+                .align(Alignment.Start)
+                .padding(start = 16.dp)
+        )
     }
 }
