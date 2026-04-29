@@ -3,6 +3,7 @@ package com.example.petjetpackcomposeapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -38,16 +39,28 @@ class MainActivity : ComponentActivity() {
             AppTheme(dynamicColor = false) {
 //                DialogApp(Modifier)
 //                ClassicCheckBox()
-                ContainerColumn("Check Box Example") {
-                    ClassicCheckBox()
-                    Spacer(Modifier.height(12.dp))
-                    ClassicCheckBox()
-                    Spacer(Modifier.height(12.dp))
-                    ClassicCheckBox()
-                    Spacer(Modifier.height(12.dp))
-                    ClassicCheckBox()
-                    Spacer(Modifier.height(12.dp))
+                Column() {
+                    ContainerColumn("Button Counter example") {
+
+                    }
+
+                    ContainerColumn("Check Box Example") {
+                        ClassicCheckBox()
+                        Spacer(Modifier.height(12.dp))
+                        ClassicCheckBox()
+                        Spacer(Modifier.height(12.dp))
+                        ClassicCheckBox()
+                        Spacer(Modifier.height(12.dp))
+                        ClassicCheckBox()
+                        Spacer(Modifier.height(12.dp))
+                    }
+
+                    ContainerColumn("TextField example") {
+
+                    }
+
                 }
+
             }
         }
     }
