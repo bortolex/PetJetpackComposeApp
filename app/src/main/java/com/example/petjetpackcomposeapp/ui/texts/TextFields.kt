@@ -13,6 +13,38 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
+fun BorderedTextFieldForContainer() {
+    var valueChange by remember { mutableStateOf("") }
+    OutlinedTextField(value = valueChange, onValueChange = {
+        valueChange = it
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@Composable
 fun ClassicTextField() {
     var textFieldValue by remember { mutableStateOf("") }
     Box(
