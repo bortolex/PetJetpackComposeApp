@@ -23,7 +23,7 @@ import com.example.compose_navigation.navigation.NavigationHost
 import com.example.compose_navigation.navigation.rememberNavigation
 import com.example.petjetpackcomposeapp.ui.ContainerColumn
 import com.example.petjetpackcomposeapp.ui.buttons.ButtonAndCounter
-import com.example.petjetpackcomposeapp.ui.buttons.ClassicCheckBox
+import com.example.petjetpackcomposeapp.ui.buttons.SingleCheckBox
 import com.example.petjetpackcomposeapp.ui.screens.AddItemScreen
 import com.example.petjetpackcomposeapp.ui.screens.ItemsScreen
 import com.example.petjetpackcomposeapp.ui.screens.ProfileScreen
@@ -49,13 +49,13 @@ class MainActivity : ComponentActivity() {
                     }
 
                     ContainerColumn("Check Box Example") {
-                        ClassicCheckBox()
+                        SingleCheckBox()
                         Spacer(Modifier.height(12.dp))
-                        ClassicCheckBox()
+                        SingleCheckBox()
                         Spacer(Modifier.height(12.dp))
-                        ClassicCheckBox()
+                        SingleCheckBox()
                         Spacer(Modifier.height(12.dp))
-                        ClassicCheckBox()
+                        SingleCheckBox()
                         Spacer(Modifier.height(12.dp))
                     }
 
