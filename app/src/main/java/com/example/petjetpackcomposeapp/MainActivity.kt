@@ -8,7 +8,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -28,7 +29,6 @@ import com.example.petjetpackcomposeapp.ui.screens.ItemsScreen
 import com.example.petjetpackcomposeapp.ui.screens.ProfileScreen
 import com.example.petjetpackcomposeapp.ui.screens.SettingsScreen
 import com.example.petjetpackcomposeapp.ui.texts.BorderedTextFieldForContainer
-import com.example.petjetpackcomposeapp.ui.texts.TextFieldWithBorders
 import com.example.petjetpackcomposeapp.ui.theme.AppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -41,7 +41,9 @@ class MainActivity : ComponentActivity() {
             AppTheme(dynamicColor = false) {
 //                DialogApp(Modifier)
 //                ClassicCheckBox()
-                Column() {
+                Column(modifier = Modifier
+                    .fillMaxSize()
+                    .verticalScroll(rememberScrollState())) {
                     ContainerColumn("Button Counter example") {
                         ButtonAndCounter()
                     }
