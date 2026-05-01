@@ -15,6 +15,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.example.compose_navigation.navigation.NavigationHost
 import com.example.compose_navigation.navigation.rememberNavigation
+import com.example.petjetpackcomposeapp.ui.Example00Default
+import com.example.petjetpackcomposeapp.ui.Example02Default
+import com.example.petjetpackcomposeapp.ui.Example04Default
+import com.example.petjetpackcomposeapp.ui.ExampleLinkElementsDefault
+import com.example.petjetpackcomposeapp.ui.ExampleMarginDefault
 import com.example.petjetpackcomposeapp.ui.screens.AddItemScreen
 import com.example.petjetpackcomposeapp.ui.screens.ItemsScreen
 import com.example.petjetpackcomposeapp.ui.screens.ProfileScreen
@@ -29,7 +34,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AppTheme(dynamicColor = false) {
-
+                ExampleLinkElementsDefault()
             }
         }
     }
