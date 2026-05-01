@@ -117,10 +117,18 @@ fun ExampleMarginDefault() {
 }
 
 @Composable
-fun ExampleLinkElementsDefault(){
+fun ExampleLinkElementsDefault() {
     ConstraintLayout(modifier = Modifier.fillMaxSize()) {
-        Square(size = 40.dp, color = Color.Red, modifier = Modifier.constrainAs(createRef()) {})
-        Square(size = 60.dp, color = Color.Blue, modifier = Modifier.constrainAs(createRef()) {})
+        val redSquare = createRef()
+
+        Square(size = 40.dp, color = Color.Red, modifier = Modifier.constrainAs(redSquare) {
+            end.linkTo(parent.end)
+            centerVerticallyTo(parent)
+        })
+        Square(size = 60.dp, color = Color.Blue, modifier = Modifier.constrainAs(createRef()) {
+            top.linkTo(redSquare.top)
+            bottom.linkTo(redSquare.bottom)
+        })
         Square(size = 80.dp, color = Color.Green, modifier = Modifier.constrainAs(createRef()) {})
         Square(size = 100.dp, color = Color.Yellow, modifier = Modifier.constrainAs(createRef()) {})
         Square(size = 50.dp, color = Color.Cyan, modifier = Modifier.constrainAs(createRef()) {})
