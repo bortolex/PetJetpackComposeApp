@@ -5,4 +5,6 @@
     <string name="items_name">Items List</string>
     <string name="profile_name">Profile</string>
     <string name="settings_name">Settings</string>
+    <string name="increment">~Increment</string>
+    <string name="settings">Settings</string>
 </resources>

@@ -16,7 +16,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.testTag
 import androidx.compose.ui.unit.sp
-import com.example.petjetpackcomposeapp.ui.CounterTestTags.COUNTER_TEXT
+import com.example.petjetpackcomposeapp.ui.TestTags.COUNTER_TEXT
 
 @Composable
 fun CounterScreen() {
@@ -30,7 +30,7 @@ fun CounterScreen() {
         Text(text = "$count", fontSize = 48.sp,
             modifier = Modifier.testTag(COUNTER_TEXT))
         Button(onClick = { count++ }, Modifier.semantics {
-            this.testTag = CounterTestTags.INCREMENT_BUTTON
+            this.testTag = TestTags.INCREMENT_BUTTON
         }) {
             Text("Increment")
         }

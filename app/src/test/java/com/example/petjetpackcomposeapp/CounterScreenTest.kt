@@ -5,8 +5,8 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
 import com.example.petjetpackcomposeapp.ui.CounterScreen
-import com.example.petjetpackcomposeapp.ui.CounterTestTags
-import com.example.petjetpackcomposeapp.ui.CounterTestTags.COUNTER_TEXT
+import com.example.petjetpackcomposeapp.ui.TestTags
+import com.example.petjetpackcomposeapp.ui.TestTags.COUNTER_TEXT
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -29,7 +29,7 @@ class CounterScreenTest {
     fun clickIncrementBtn_incrementsCounter(): Unit = with(composeTestRule) {
 
         //act
-        onNodeWithTag(CounterTestTags.INCREMENT_BUTTON).performClick()
+        onNodeWithTag(TestTags.INCREMENT_BUTTON).performClick()
 
         //assert
         onNodeWithTag(COUNTER_TEXT).assertTextEquals("1")

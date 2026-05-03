@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.example.compose_navigation.navigation.NavigationHost
 import com.example.compose_navigation.navigation.rememberNavigation
+import com.example.petjetpackcomposeapp.counterFeature.CounterRepository
 import com.example.petjetpackcomposeapp.ui.CounterScreen
 import com.example.petjetpackcomposeapp.ui.screens.AddItemScreen
 import com.example.petjetpackcomposeapp.ui.screens.ItemsScreen
@@ -33,6 +34,7 @@ class MainActivity : ComponentActivity() {
                 CounterScreen()
             }
         }
+        CounterRepository()
     }
 }
 
