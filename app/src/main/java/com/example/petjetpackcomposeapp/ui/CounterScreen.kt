@@ -6,6 +6,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -17,11 +20,14 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.testTag
 import androidx.compose.ui.unit.sp
 import com.example.petjetpackcomposeapp.ui.CounterTestTags.COUNTER_TEXT
+import kotlin.concurrent.timer
+import kotlin.random.Random
 
 @Composable
 fun CounterScreen() {
     var count by rememberSaveable { mutableIntStateOf(0) }
-
+//    SimpleSideEffectExample(counter = count)
+    LaunchedEffectExample(count)
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -34,5 +40,28 @@ fun CounterScreen() {
         }) {
             Text("Increment")
         }
+    }
+}
+
+@Composable
+fun SimpleSideEffectExample(counter: Int) = SideEffect {
+    println("SideEffect, counter = $counter")
+}
+
+@Composable
+fun LaunchedEffectExample(counter: Int) = LaunchedEffect(0) {
+    println("LaunchedEffect, counter = $counter")
+}
+
+@Composable
+fun DisposableEffectExample() = DisposableEffect(0) {
+    println("Disposable SideEffect - started")
+    val timer = timer(period = 1000L) {
+        println("Disposable SideEffect - running ${Random.nextInt(1000)}")
+    }
+
+    onDispose {
+        timer.cancel()
+        println("Disposable SideEffect - cancelled")
     }
 }
