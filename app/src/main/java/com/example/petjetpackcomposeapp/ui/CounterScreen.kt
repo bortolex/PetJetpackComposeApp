@@ -27,7 +27,9 @@ import kotlin.random.Random
 fun CounterScreen() {
     var count by rememberSaveable { mutableIntStateOf(0) }
 //    SimpleSideEffectExample(counter = count)
-    LaunchedEffectExample(count)
+//    LaunchedEffectExampleWithStaticKey(counter = count)
+//    LaunchedEffectExampleWithDynamicKey(count)
+    DisposableEffectExample()
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -49,7 +51,12 @@ fun SimpleSideEffectExample(counter: Int) = SideEffect {
 }
 
 @Composable
-fun LaunchedEffectExample(counter: Int) = LaunchedEffect(0) {
+fun LaunchedEffectExampleWithStaticKey(counter: Int) = LaunchedEffect(0) {
+    println("LaunchedEffect, counter = $counter")
+}
+
+@Composable
+fun LaunchedEffectExampleWithDynamicKey(counter: Int) = LaunchedEffect(counter) {
     println("LaunchedEffect, counter = $counter")
 }
 
