@@ -14,6 +14,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
+import com.example.petjetpackcomposeapp.ExceptionMessageMapper
+import com.example.petjetpackcomposeapp.R
 import com.example.petjetpackcomposeapp.ui.TestTags
 
 @Composable

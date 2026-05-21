@@ -36,5 +36,10 @@ class CounterRepository @Inject constructor() {
         val parsedValue = value.toIntOrNull()?:throw InvalidCounterValueException(value)
     }
 
+    companion object {
+        const val MIN_VALUE = 0
+        const val MAX_VALUE = 1_000_000
+    }
+
 
 }

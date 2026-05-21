@@ -7,4 +7,9 @@
     <string name="settings_name">Settings</string>
     <string name="increment">~Increment</string>
     <string name="settings">Settings</string>
+    <string name="reset">Reset</string>
+    <string name="unknown_error">Unknown Error. Please try again later.</string>
+    <string name="your_counter_value_is_out_of_bounds">Your counter value \'%1$s\' is out of bounds (%2$d..%3$d).</string>
+    <string name="try_again">Try Again</string>
+    <string name="save">Save</string>
 </resources>

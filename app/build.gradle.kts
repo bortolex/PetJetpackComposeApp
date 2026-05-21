@@ -30,11 +30,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -89,6 +89,8 @@ dependencies {
 //    implementation(libs.okhttp.logging)
 
     implementation(libs.hilt.android)
+    implementation(libs.hilt.effects)
+    ksp(libs.hilt.effects.compiler)
     ksp(libs.hilt.android.compiler)
     implementation(libs.hilt.navigation.compose)
     ksp(libs.hilt.compiler)

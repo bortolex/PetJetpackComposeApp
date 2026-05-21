@@ -1,8 +1,13 @@
 package com.example.petjetpackcomposeapp.ui
 
 object TestTags {
-    val SettingsButton: String = "SettingsButton"
-    const val ProgressBar: String = "ProgressBar"
-    const val COUNTER_TEXT = "counterText"
-    const val INCREMENT_BUTTON = "incrementButton"
+    const val IncrementButton = "incrementButton"
+    const val SettingsButton = "settingsButton"
+    const val SaveButton = "saveButton"
+    const val TryAgainButton = "tryAgainButton"
+    const val ErrorText = "errorText"
+    const val CounterText = "counterText"
+    const val CounterInput = "counterInput"
+    const val ScreenProgressBar = "screenProgress"
+    const val ProgressBar = "progressBar"
 }
