@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
     id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
 }
@@ -77,6 +78,7 @@ dependencies {
     implementation(libs.okhttp.logging)
 //    implementation(libs.kotlinx.serialization.json)
     implementation(libs.gson)
+    implementation(libs.kotlinx.serialization.json)
     implementation(libs.retrofit.gson)
 //    implementation(libs.retrofit.converter.gson)
 //    kapt(libs.hilt.android.compiler)
