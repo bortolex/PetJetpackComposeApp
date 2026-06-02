@@ -16,6 +16,7 @@ import androidx.compose.ui.res.stringResource
 import com.example.compose_navigation.navigation.NavigationHost
 import com.example.compose_navigation.navigation.rememberNavigation
 import com.example.petjetpackcomposeapp.ui.dialogs.DialogApp
+import com.example.petjetpackcomposeapp.ui.navigation.SimpleNavigation
 import com.example.petjetpackcomposeapp.ui.screens.AddItemScreen
 import com.example.petjetpackcomposeapp.ui.screens.ItemsScreen
 import com.example.petjetpackcomposeapp.ui.screens.ProfileScreen
@@ -29,10 +30,10 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AppTheme(dynamicColor = false) {
+            SimpleNavigation()
+//            AppTheme(dynamicColor = false) {
 //                AppContent()
-                DialogApp(Modifier)
-            }
+//            }
         }
     }
 }
