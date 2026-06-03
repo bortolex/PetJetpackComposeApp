@@ -1,0 +1,7 @@
+DESCRIPTION OF CURRENT BRANCH:
+It's very primitive implementation of navigation in Compose:
+bottomBar (it's named NavigationBar in compose material3)
+without any graph of screens
+
+MAIN LOGIC OF NAVIGATION IS AVAILABLE IN:
+Navigation.kt file
