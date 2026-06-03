@@ -1,12 +1,10 @@
 package com.example.petjetpackcomposeapp.ui.navigation
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
@@ -17,7 +15,13 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-
+import com.example.petjetpackcomposeapp.ui.navigation.Routes.DETAILS_HOME
+import com.example.petjetpackcomposeapp.ui.navigation.Routes.HOME
+import com.example.petjetpackcomposeapp.ui.navigation.Routes.PUSH
+import com.example.petjetpackcomposeapp.ui.navigation.Routes.SEARCH
+import com.example.petjetpackcomposeapp.ui.navigation.Routes.SETTINGS
+import com.example.petjetpackcomposeapp.ui.navigation.screens.DetailsScreen
+import com.example.petjetpackcomposeapp.ui.navigation.screens.HomeScreen
 
 data class DataTabItem(val icon: ImageVector, val title: String)
 
@@ -28,13 +32,14 @@ fun SimpleNavigation() {
         DataTabItem(Icons.Default.Search, "search"),
         DataTabItem(Icons.Default.Settings, "settings")
     )
+    val routes = listOf(Routes.HOME, Routes.SEARCH, Routes.SETTINGS)
     val navController = rememberNavController()
     Scaffold(bottomBar = {
         NavigationBar() {
-        items.forEach {
+        items.forEachIndexed { index, it ->
             NavigationBarItem(
                 selected = true,
-                onClick = {},
+                onClick = { navController.navigate(routes[index]) },
                 label = { Text(it.title) },
                 icon = {}
             )
@@ -44,12 +49,15 @@ fun SimpleNavigation() {
     }) { innerPadding ->
         NavHost(
             navController,
-            startDestination = items[0].title,
+            startDestination = Routes.HOME,
             modifier = Modifier.padding(innerPadding)
         ) {
-            items.forEach { dataTab ->
-                composable(route = dataTab.title) {}
-            }
+            composable(HOME) { HomeScreen(navController) }
+            composable(SEARCH) {}
+            composable(PUSH) {}
+            composable(SETTINGS) {}
+            composable(DETAILS_HOME) {DetailsScreen()}
         }
     }
 }
+
