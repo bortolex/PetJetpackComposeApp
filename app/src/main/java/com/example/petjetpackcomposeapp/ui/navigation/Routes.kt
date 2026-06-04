@@ -1,9 +1,10 @@
 package com.example.petjetpackcomposeapp.ui.navigation
 
-object Routes {
-    const val HOME = "home"
-    const val DETAILS_HOME = "details"
-    const val SEARCH = "search"
-    const val SETTINGS = "settings"
-    const val PUSH = "push"
-}
+import androidx.navigation3.runtime.NavKey
+import kotlinx.serialization.Serializable
+
+@Serializable data object Home : NavKey
+@Serializable data object Search : NavKey
+@Serializable data object Push : NavKey
+@Serializable data object Settings : NavKey
+@Serializable data object DetailsHome : NavKey

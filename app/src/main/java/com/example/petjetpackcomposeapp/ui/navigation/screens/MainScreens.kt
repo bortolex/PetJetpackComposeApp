@@ -1,6 +1,5 @@
 package com.example.petjetpackcomposeapp.ui.navigation.screens
 
-import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Spacer
@@ -17,20 +16,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
-import com.example.petjetpackcomposeapp.ui.navigation.Routes
 
 
 @Composable
-fun HomeScreen(navController: NavHostController) {
+fun HomeScreen(onItemClick: () -> Unit) {
     val testList = listOf("asdoiasd", "f.e.", "experiment", "californication", "medical plasters", "SOMETHING", "asdoiasd", "f.e.", "experiment", "californication", "medical plasters", "SOMETHING")
     Spacer(modifier = Modifier.padding(top = 16.dp))
-    LazyColumn() {
+    LazyColumn {
         items(testList) { item ->
-            HomeListItem(item, modifier = Modifier.clickable{
-                navController.navigate(Routes.DETAILS_HOME)
-                //navigator.navigate()
-            })
+            HomeListItem(item, modifier = Modifier.clickable { onItemClick() })
         }
     }
 }
