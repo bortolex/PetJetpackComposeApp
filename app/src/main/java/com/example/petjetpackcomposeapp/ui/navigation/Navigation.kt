@@ -33,7 +33,7 @@ fun SimpleNavigation() {
         DataTabItem(Icons.Default.Settings, "settings")
     )
     val routes = listOf(Routes.HOME, Routes.SEARCH, Routes.SETTINGS)
-    val navController = rememberNavController()
+    val navController = rememberNavController() // rememberNavController makes it with survival of config changes
     Scaffold(bottomBar = {
         NavigationBar() {
         items.forEachIndexed { index, it ->
@@ -52,7 +52,8 @@ fun SimpleNavigation() {
             startDestination = Routes.HOME,
             modifier = Modifier.padding(innerPadding)
         ) {
-            composable(HOME) { HomeScreen(navController) }
+            composable(HOME) { backStackEntry ->
+                HomeScreen(navController) }
             composable(SEARCH) {}
             composable(PUSH) {}
             composable(SETTINGS) {}
