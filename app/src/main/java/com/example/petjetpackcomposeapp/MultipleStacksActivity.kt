@@ -3,12 +3,14 @@ package com.example.petjetpackcomposeapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.ui.NavDisplay
 import com.example.compose_navigation.navigation.rememberNavigation
@@ -57,10 +59,11 @@ class MultipleStacksActivity : ComponentActivity() {
                         )
                     }
                 }
-            }) {
+            }) { padding ->
                 NavDisplay(
                     entries = navigationState.toDecoratedEntries(entryProvider),
-                    onBack = { navigator.goBack() }
+                    onBack = { navigator.goBack() },
+                    modifier = Modifier.padding(padding)
                 )
             }
         }
